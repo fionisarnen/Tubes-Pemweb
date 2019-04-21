@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2019 at 04:05 PM
+-- Generation Time: Apr 20, 2019 at 07:07 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -58,18 +58,18 @@ CREATE TABLE `barang` (
   `berat_barang` int(30) DEFAULT NULL,
   `keterangan` varchar(100) DEFAULT NULL,
   `id_admin` int(11) DEFAULT NULL,
-  `id_pengirim` int(11) DEFAULT NULL,
   `total_harga` int(30) DEFAULT NULL,
-  `id_penerima` int(11) DEFAULT NULL
+  `id_penerima` int(11) DEFAULT NULL,
+  `number` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `jenis_barang`, `berat_barang`, `keterangan`, `id_admin`, `id_pengirim`, `total_harga`, `id_penerima`) VALUES
-(1, 'pakaian', 2, 'warna hitam', 1450, 1, 26000, 1),
-(2, 'sepatu', 1, 'Ukuran 40, Warna Hitam, Merk Adidas', 1451, 2, 11000, 2);
+INSERT INTO `barang` (`id_barang`, `jenis_barang`, `berat_barang`, `keterangan`, `id_admin`, `total_harga`, `id_penerima`, `number`) VALUES
+(1, 'pakaian', 2, 'warna hitam', 1450, 26000, 1, NULL),
+(2, 'sepatu', 1, 'Ukuran 40, Warna Hitam, Merk Adidas', 1451, 11000, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,6 @@ CREATE TABLE `pengirim` (
   `no_telepon` varchar(12) DEFAULT NULL,
   `kota` varchar(50) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
-  `id_admin` int(11) DEFAULT NULL,
   `id_barang` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -141,9 +140,9 @@ CREATE TABLE `pengirim` (
 -- Dumping data for table `pengirim`
 --
 
-INSERT INTO `pengirim` (`id_pengirim`, `nama_pengirim`, `no_telepon`, `kota`, `alamat`, `id_admin`, `id_barang`) VALUES
-(1, 'sarah', '081356437806', 'Cimahi', 'Jl. Anaya, no. 06, RT 05, RW 03, Kec. Cimahi Selatan, Kab. Cimahi.', 1450, 1),
-(2, 'Ulfah Fadilah', '082167765409', 'Jakarta Timur', 'Jl. Teratai, No. 30, RT 03, RW. 03, Kebayoran Lama, Jakarta Selatan, DKI Jakarta, 12240', 1451, 2);
+INSERT INTO `pengirim` (`id_pengirim`, `nama_pengirim`, `no_telepon`, `kota`, `alamat`, `id_barang`) VALUES
+(1, 'sarah', '081356437806', 'Cimahi', 'Jl. Anaya, no. 06, RT 05, RW 03, Kec. Cimahi Selatan, Kab. Cimahi.', 1),
+(2, 'Ulfah Fadilah', '082167765409', 'Jakarta Timur', 'Jl. Teratai, No. 30, RT 03, RW. 03, Kebayoran Lama, Jakarta Selatan, DKI Jakarta, 12240', 2);
 
 -- --------------------------------------------------------
 
@@ -185,7 +184,6 @@ ALTER TABLE `admin`
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`),
   ADD KEY `id_admin` (`id_admin`),
-  ADD KEY `id_pengirim` (`id_pengirim`),
   ADD KEY `id_penerima` (`id_penerima`);
 
 --
@@ -207,7 +205,6 @@ ALTER TABLE `penerima`
 --
 ALTER TABLE `pengirim`
   ADD PRIMARY KEY (`id_pengirim`),
-  ADD KEY `id_admin` (`id_admin`),
   ADD KEY `id_barang` (`id_barang`);
 
 --
@@ -244,7 +241,7 @@ ALTER TABLE `pengirim`
 -- AUTO_INCREMENT for table `pengiriman`
 --
 ALTER TABLE `pengiriman`
-  MODIFY `id_pengiriman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pengiriman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -262,7 +259,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`),
-  ADD CONSTRAINT `barang_ibfk_2` FOREIGN KEY (`id_pengirim`) REFERENCES `pengirim` (`id_pengirim`),
   ADD CONSTRAINT `barang_ibfk_3` FOREIGN KEY (`id_penerima`) REFERENCES `penerima` (`id_penerima`);
 
 --
@@ -281,7 +277,6 @@ ALTER TABLE `penerima`
 -- Constraints for table `pengirim`
 --
 ALTER TABLE `pengirim`
-  ADD CONSTRAINT `pengirim_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`),
   ADD CONSTRAINT `pengirim_ibfk_2` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
 
 --
