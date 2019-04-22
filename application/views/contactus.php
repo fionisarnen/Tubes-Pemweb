@@ -33,24 +33,36 @@
                     <img class="w-100 h-25" src="<?php echo base_url().'assets/img/contact-us.jpg'?>" style>
                 </div>
                 <div class = "row">
-                    <h5>WeChat ID</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/wechat.png'?>">
-                    <p>@JTExpressID</p>
-                    <h5>Facebook</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/fb-logo.jpg'?>">
-                    <p>J&T Express Indonesia</p>
-                    <h5>Instagram</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/instagram.png'?>">
-                    <p>@jntexpressid</p>
-                    <h5>Twitter</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/twitter.png'?>">
-                    <p>@jntexpressid</p>
-                    <h5>Youtube</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/youtube.png'?>">
-                    <p>J&T Express Indonesia</p>
-                    <h5>Line</h5>
-                    <img class="w-1 h-1" src="<?php echo base_url().'assets/img/line-logo.png'?>">
-                    <p>@jtexpressid</p>
+                    <div class='col-md-2'>
+                        <h5>WeChat ID</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/wechat.png'?>">
+                        <p>@JTExpressID</p>
+                    </div>
+                    <div class='col-md-2'>
+                        <h5>Facebook</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/fb-logo.jpg'?>">
+                        <p>J&T Express Indonesia</p>                    
+                    </div>
+                    <div class='col-md-2'>
+                        <h5>Instagram</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/instagram.png'?>">
+                        <p>@jntexpressid</p>                    
+                    </div>
+                    <div class='col-md-2'>
+                        <h5>Twitter</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/twitter.png'?>">
+                        <p>@jntexpressid</p>
+                    </div>
+                    <div class='col-md-2'>
+                        <h5>Youtube</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/youtube.png'?>">
+                        <p>J&T Express Indonesia</p>
+                    </div>
+                    <div class='col-md-2'>
+                        <h5>Line</h5>
+                        <img class="w-1 h-1" src="<?php echo base_url().'assets/img/line-logo.png'?>">
+                        <p>@jtexpressid</p>
+                    </div>
                 </div>
             <!-- </div>  -->
         </div>

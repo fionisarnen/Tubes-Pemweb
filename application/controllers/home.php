@@ -30,6 +30,7 @@ class Home extends CI_Controller
 	public function beranda(){
 		$data['judul'] = 'Beranda';
 		$this->load->view('navbar');
+		// $this->load->view('footer');
 		$this->load->view('beranda');
 	}
 	public function cektarif(){
