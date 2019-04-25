@@ -35,50 +35,27 @@
     	<div class='inner-container row justify-content-center'>
     			<h3 style="color: red">CAREER</h3>
 				<table class="table">
-					<thead class="col-md-3">
+					<thead class="col-md-3 text-center">
 						<tr>
 							<th scope="col-3">Position</th>
 							<th scope="col-3">City</th> 
-							<th scope="col-3">Post Date</th>
+                            <th scope="col-3">Post Date</th>
+                            <th scope="col-3">Aksi</th>
 						</tr>
 					</thead>
-					<tbody class="bg-light"> 
-						<tr class="'clickable-row">
-							<a href="<?php echo site_url('home/career1');?>"><td>ACCOUNTING(STAFF&SPV)</td></a>
-							<td>Jakarta</td>
-							<td>28-08-2018</td>
-						</tr>
-						<tr role="button" data-href>
-							<td>GRAPHIC DESIGNER</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td>
-						</tr>
-						<tr><a href="">
-							<td>PERSONAL ASSISTANT FOR CEO (MANDARIN SPEAKER)</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td></a>
-						</tr>
-						<tr><a href="">
-							<td>PERSONAL ASSISTANT FOR GM (MANDARIN SPEAKER)</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td>
-						</tr>
-						<tr><a href="">
-							<td>Finance(SPV)</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td></a>
-						</tr>
-						<tr><a href="">
-							<td>HRD RECRUITMENT(STAFF&SPV)</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td></a>
-						</tr>
-						<tr><a href="">
-							<td>BRANDING DEPARTMENT(STAFF&SPV)</td>
-							<td>Jakarta</td>
-							<td>28-08-2018</td></a>
-						</tr>
-					</tbody>
+                    <tbody>
+                        <tr><?php foreach ($karir as $kar) : ?>
+                            <td class="text-center"><?= $kar['position']; ?></td>
+                            <td class="text-center"><?= $kar['city']; ?></td>
+                            <td class="text-center"><?= $kar['post_date']; ?></td>
+                            <td class="text-center">
+                                <a href="<?php base_url(); ?>hapus/<?php echo $kar['id'];?>" class="badge badge-danger float-center" onclick="return confirm('Apakah anda yakin menghapus data ini?');">hapus</a>
+                                <a href="<?php base_url(); ?>ubah/<?php echo $kar['id'];?>" class="badge badge-success float-center">ubah</a>
+                            </td>
+                        </tr>
+                        <?php endforeach ?>
+
+                    </tbody>
 				</table>
 			</div>
 		</div>

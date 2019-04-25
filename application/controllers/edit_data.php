@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title> Delivery Now</title>
+    <title>Career</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +11,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/style.css'?>">
+
 </head>
 
 <body style=background-color:#ddd>
-    
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?php echo base_url().'assets/img/carousel5.jpg'?>" class="d-block w-100" alt="carou2">
+                <img src="<?php echo base_url().'assets/img/carousel7.jpg'?>" class="d-block w-100" alt="carou2">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -31,24 +31,18 @@
         </a>
     </div>
     <hr>
+    <div class="container" style="background: white">
+    	<div class='inner-container row justify-content-center'>
+    			<h3 style="color: red">CAREER</h3>
+				
+				<table class="table">
 
-    <div class="row mt-5">
-        <div class="col">
-            <h3 class="text-center" style="color: red">Order Success</h3>
-            <div class='container' style=background-color:white><?php foreach ($join as $row) {?>
-                <h4 class='text-black text-center'>Order Success</h4>
-                <h6 class='text-black text-center'>Ricipient Name: <?php echo $row->nama_penerima;?></h6>
-                <h6 class='text-black text-center'>Sender Name: <?php echo $row->nama_pengirim;?></h6>
-                <h4 class='text-black text-center'>Package Information</h4>
-                <h6 class='text-black text-center'>Item Name: <?php echo $row->jenis_barang?></h6>
-                <h6 class='text-black text-center'>Number: <?php echo $row->number?></h6>
-                <h6 class='text-black text-center'>Weight: <?php echo $row->berat_barang?>
-                <?php } ?></h6>
-            </div>
-        </div>
-    </div>
-
-    <footer>
+				</table>
+				
+			</div>
+		</div>
+	</div>
+	<footer>
         <div class='container mt-3' style='background-color:white'>
             <div class='row'>
                 <div class='col-md-3'>
@@ -142,4 +136,7 @@
         crossorigin="anonymous"></script>
 </body>
 
+</html>
+
+</body>
 </html>
